@@ -1,15 +1,19 @@
 let userData = { id: 1, name: "John Doe" };
 
-let userTask = 
- { userId: 1, task: "Write code" ,
-   userId: 1, task: "Review PRs"}
+let userTask =  [{ userId: 1, task: "Write code" },
+   { userId: 1, task: "Review PRs" }];
 
 
-setTimeout(() => {
-  console.log(userData);
-}, 1000);
+function getUserData(cb) {
+  setTimeout(() => {
+    console.log(userData);
+    cb(userData);
+  }, 1000);
+}
 
-setTimeout(() => {
+function getUserTask(cb) {
+  setTimeout(() => {
     console.log(userTask);
-    
-},2000);
+    cb(userTask);
+  }, 2000);
+}
