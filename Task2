@@ -1,0 +1,20 @@
+const http = require("node:http");
+
+http
+  .createServer((req, res) => {
+    if (req.url === "/home") {
+      res.writeHead(200, { "Content-Type": "text/plain" });
+      res.write("Hello Home");
+      res.end();
+    }else  if (req.url === "/users") {
+        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.write("Hello users");
+        res.end();
+      }else  if (req.url === "/user") {
+        if (req.type == 'GET')
+        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.write("Hello Home");
+        res.end();
+      }
+  })
+  .listen(3020);
